@@ -6,7 +6,8 @@ export PATH=$HOME/bin:/usr/local/bin:/opt/homebrew/bin:$PATH
 ZSH_THEME=""
 
 #Plugins
-plugins=(git zsh-autosuggestions)
+plugins=(git fast-syntax-highlighting   zsh-autosuggestions)
+
 source $ZSH/oh-my-zsh.sh
 
 #Star Ship
