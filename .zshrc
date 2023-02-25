@@ -14,7 +14,7 @@ alias java19='export JAVA_HOME=$JAVA_19_HOME'
 export ANDROID_SDK_ROOT=~/Library/Android/sdk
 java19 
 
-export PATH=$HOME/bin:/usr/local/bin:/opt/homebrew/bin:$ANDROID_SDK_ROOT/tools:$ANDROID_SDK_ROOT/platform-tools:$PATH
+export PATH=$HOME/.pub-cache/bin:$HOME/bin:/usr/local/bin:/opt/homebrew/bin:$ANDROID_SDK_ROOT/tools:$ANDROID_SDK_ROOT/platform-tools:$PATH
 
 #Theme
 ZSH_THEME=""
