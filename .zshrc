@@ -12,7 +12,7 @@ alias java8='export JAVA_HOME=$JAVA_8_HOME'
 alias java11='export JAVA_HOME=$JAVA_11_HOME'
 alias java19='export JAVA_HOME=$JAVA_19_HOME'
 export ANDROID_SDK_ROOT=~/Library/Android/sdk
-java19 
+java11 
 
 export PATH=$HOME/.pub-cache/bin:$HOME/bin:/usr/local/bin:/opt/homebrew/bin:$ANDROID_SDK_ROOT/tools:$ANDROID_SDK_ROOT/platform-tools:$PATH
 
