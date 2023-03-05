@@ -19,6 +19,8 @@ export ANDROID_SDK_ROOT=~/Library/Android/sdk
 
 export PATH=$HOME/.pub-cache/bin:$HOME/bin:/usr/local/bin:/opt/homebrew/bin:$ANDROID_SDK_ROOT/tools:$ANDROID_SDK_ROOT/platform-tools:$PATH
 
+export PATH="/opt/homebrew/opt/ruby/bin:$PATH"
+
 #Theme
 ZSH_THEME=""
 
@@ -29,4 +31,3 @@ source $ZSH/oh-my-zsh.sh
 
 #Star Ship
 eval "$(starship init zsh)"
-export PATH="/opt/homebrew/opt/ruby/bin:$PATH"
