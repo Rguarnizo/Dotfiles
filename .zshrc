@@ -23,7 +23,7 @@ export PATH=$HOME/.pub-cache/bin:$HOME/bin:/usr/local/bin:/opt/homebrew/bin:$AND
 ZSH_THEME=""
 
 #Plugins
-plugins=(git fast-syntax-highlighting zsh-autosuggestions)
+plugins=(git fast-syntax-highlighting zsh-autosuggestions zsh-vi-mode)
 
 source $ZSH/oh-my-zsh.sh
 
