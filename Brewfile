@@ -1,6 +1,5 @@
 tap "dart-lang/dart"
 tap "homebrew/bundle"
-tap "homebrew/cask-versions"
 # CLI tool to build, test, debug, and deploy Serverless applications using AWS SAM
 brew "aws-sam-cli"
 # Official Amazon AWS command-line interface
