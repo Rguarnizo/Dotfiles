@@ -1,12 +1,17 @@
-# If you come from bash you might have to change your $PATH.
-export PATH=$HOME/.pub-cache/bin:~/Downloads/platform-tools:/opt/homebrew/bin:$HOME/bin:/usr/local/bin:/opt/homebrew/opt/openjdk@11/bin:$HOME/flutter/bin:$PATH
-
-
-#Google Application Credentials
-GOOGLE_APPLICATION_CREDENTIALS=$HOME/Code/Finmaq/pre-approved-backend/formulario-preaprobados-finmaq-firebase-adminsdk-cu4hj-1d46f0be4e.json
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
 
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
+
+PATH=/opt/homebrew/bin:$PATH
+
+# ZSH_THEME="powerlevel10k/powerlevel10k"
+
 
 export JAVA_8_HOME=$(/usr/libexec/java_home -v1.8)
 export JAVA_17_HOME=$(/usr/libexec/java_home -v17)
@@ -20,13 +25,11 @@ java8
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="robbyrussell"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
 # a theme from this variable instead of looking in $ZSH/themes/
 # If set to an empty array, this variable will have no effect.
-# ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -82,7 +85,12 @@ ZSH_THEME="robbyrussell"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git fast-syntax-highlighting zsh-autosuggestions zsh-vi-mode)
+plugins=(
+    git 
+    fast-syntax-highlighting 
+    zsh-autosuggestions 
+    zsh-vi-mode
+    )
 
 
 source $ZSH/oh-my-zsh.sh
@@ -113,3 +121,8 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 eval "$(starship init zsh)"
+
+# source /opt/homebrew/share/powerlevel10k/powerlevel10k.zsh-theme
+
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
