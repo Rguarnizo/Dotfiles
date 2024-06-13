@@ -10,6 +10,7 @@ defaults write com.apple.dock "autohide" -bool "true" && killall Dock
 defaults write com.apple.finder "QuitMenuItem" -bool "true" && killall Finder
 defaults -currentHost write -globalDomain com.apple.mouse.tapBehavior -int 
 defaults write -globalDomain NSUserKeyEquivalents -dict-add "Move focus to next window" '⌥\t'
+defaults write com.apple.dock mru-spaces -bool false
 
 
 git clone https://github.com/zdharma-continuum/fast-syntax-highlighting.git \
