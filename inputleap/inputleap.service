@@ -1,0 +1,12 @@
+[Unit]
+Description=InputLeap Client Auto Start
+After=network.target
+
+[Service]
+Type=simple
+ExecStart=/home/deck/.local/bin/inputleap-start
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=default.target
