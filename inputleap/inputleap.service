@@ -5,8 +5,8 @@ After=network.target
 [Service]
 Type=simple
 ExecStart=/home/deck/.local/bin/inputleap-start
-Restart=always
-RestartSec=5
+Restart=on-failure
+RestartSec=30
 
 [Install]
 WantedBy=default.target
