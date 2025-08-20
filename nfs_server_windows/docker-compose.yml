@@ -1,0 +1,18 @@
+version: "3.8"
+
+services:
+  nfs-server:
+    image: itsthenetwork/nfs-server-alpine:latest
+    container_name: nfs-server
+    privileged: true
+    restart: unless-stopped
+    environment:
+      - SHARED_DIRECTORY=/exports
+    ports:
+      - "2049:2049/tcp"
+      - "2049:2049/udp"
+    volumes:
+      # Carpeta 1 compartida
+      - /home/rguarnizo/Emulation:/exports/Emulation
+      # Archivo exports personalizado
+      - ./exports:/etc/exports
