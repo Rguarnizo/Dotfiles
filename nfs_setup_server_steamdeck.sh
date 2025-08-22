@@ -36,7 +36,7 @@ fi
 
 # 4. Ajustar permisos (propietario = deck:deck)
 chown deck:deck "$NFSPATH"
-chmod 755 "$NFSPATH"
+chmod 777 "$NFSPATH"
 
 # 5. Añadir configuración en /etc/exports
 EXPORT_LINE="$NFSPATH *(rw,sync,no_subtree_check,all_squash,anonuid=1000,anongid=1000)"
@@ -50,16 +50,17 @@ fi
 
 # 6. Habilitar y arrancar servicios NFS
 echo "Habilitando servicios NFS..."
-systemctl enable --now nfs-server
-systemctl restart nfs-server
+sudo systemctl enable --now nfs-server rpcbind nfs-idmapd
 
 # 7. Exportar cambios
-exportfs -ra
+sudo exportfs -ra
+sudo exportfs -v
+export PATH=$HOME/.local/bin:$PATH
 
 echo "✅ Servidor NFS configurado correctamente."
 echo " Carpeta exportada: $NFSPATH"
 echo " Opciones: $EXPORT_LINE"
 echo
 echo "Para verificar las exportaciones disponibles:"
-echo "   showmount -e $(hostname -I | awk '{print $1}')"
+echo "   showmount -e $(ip -4 addr show wlan0 | grep -oP '(?<=inet\s)\d+(\.\d+){3}'))"
  
