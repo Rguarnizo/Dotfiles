@@ -3,7 +3,7 @@
 # Uso: sudo ./setup-nfs-server.sh /ruta/a/compartir "192.168.1.0/24(rw,sync,no_subtree_check)"
 
 SHARE_DIR=$1
-EXPORT_RULE="*(rw,sync,no_subtree_check)"
+EXPORT_RULE="*(rw,sync,no_subtree_check,all_squash,anonuid=1000,anongid=1000)"
 
 if [ -z "$SHARE_DIR" ] || [ -z "$EXPORT_RULE" ]; then
     echo "Uso: $0 <DIRECTORIO_A_COMPARTIR> <REGLA_EXPORT>"
@@ -37,3 +37,9 @@ echo "📡 Directorio compartido: $SHARE_DIR"
 echo "🔑 Regla: $EXPORT_RULE"
 echo
 echo "👉 Para verificar usa: showmount -e $(hostname -I | awk '{print $1}')"
+echo "Ejecuta en el cliente Linux:"
+echo "  sudo mount -t nfs $(hostname -I | awk '{print $1}'):/srv/nfs/roms /mnt/nfs_share"
+echo "Para desmontar: sudo umount /mnt/nfs_share"
+echo "En Windows (PowerShell, como admin):"
+echo "  mount -o anon \\\\$(hostname -I | awk '{print $1}')\\srv\\nfs\\roms Z:"
+echo "Para desmontar: umount Z:"
